@@ -1,11 +1,17 @@
-<div>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<%= javascript_importmap_tags %>
+<div class="splash-bg">
+  <div class="img-bottom">
+    <%= image_tag ("/assets/balance-bg.png"), class: "img-responsive"%>
+  </div>
+  <div class="main-container vertical-center">
+    <h1 id="title-balance" class="margin-bottom">Balance</h1>
+  </div>
+  <div class="bttns-position">
+    <%= link_to "Login", new_user_session_path, class: "btn btn-light buttons margin-bottom" %>
+    <%= link_to "Signup", new_user_registration_path, class: "btn btn-success buttons" %>
+  </div>
 </div>
-
-<h1>Balance</h1>
-
-<div>
-  <%= link_to "Login", new_user_session_path %>
-  <%= link_to "Signup", new_user_registration_path %>
-</div>
-
