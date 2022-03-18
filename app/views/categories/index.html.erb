@@ -1,5 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
+<div class="blue-navbar">
+    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <p>TRANSACTIONS</p>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+</div>
 <h1>Categories</h1>
 
 <div id="categories">
@@ -12,3 +15,4 @@
 </div>
 
 <%= link_to "New category", new_category_path %>
+<p style="color: green"><%= notice %></p>
