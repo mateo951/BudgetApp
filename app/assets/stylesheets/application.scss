@@ -16,6 +16,10 @@
 
  @import "bootstrap";
 
+body {
+  background-color: #F5F6F8;
+}
+
 .splash-bg {
   background-color: #3778c2;
   height: 100%;
@@ -42,7 +46,7 @@
 
 .img-bottom {
   position: absolute;
-  top: 15em;
+  top: 10em;
 }
 
 .bttns-position {
@@ -69,4 +73,79 @@
 
 .margin-bottom {
   margin-bottom: 40px;
+}
+
+// Session & Registration
+
+.center-div {
+  margin: auto;
+  // width: 60%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.margin-top-nav {
+  margin-top: 5%;
+}
+
+.blue-navbar {
+  background-color: #3778c2;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+.arrow-back img {
+  width: 40px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.blue-navbar p {
+  color: white;
+}
+
+.borderless-bttn {
+  border: none;
+  background-color: #3778c2;
+  color: white;
+}
+
+.input {
+  border: 1px solid lightgray;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-100 input {
+  width: 100%;
+  border: 1px solid lightgray;
+  height: 40px;
+}
+
+.width-100 input ::placeholder {
+  margin-left: 10px;
+}
+
+.forgot-pss {
+  margin-top: 30px;
+  color: gray
+}
+
+.alert-danger {
+  text-align: center;
 }

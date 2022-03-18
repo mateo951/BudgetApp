@@ -1,26 +1,23 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="blue-navbar">
+    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <p>LOGIN</p>
+    <button id="login-submit" class="borderless-bttn">Log in</button>
+</div>
+<div class="center-div flex-column align-items margin-top-nav form">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'login-form', :class => 'width-100', 'data-bar' => 'baz'}) do |f| %>
+  <div class="field width-100">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field width-100">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-pss" %><br />
+<% end %>
+
+</div>
+
