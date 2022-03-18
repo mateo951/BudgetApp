@@ -1,7 +1,7 @@
 <div class="blue-navbar">
     <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
     <p>LOGIN</p>
-    <button id="login-submit" class="borderless-bttn">Log in</button>
+    <button id="login-submit" class="borderless-bttn">Log In</button>
 </div>
 <div class="center-div flex-column align-items margin-top-nav form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'login-form', :class => 'width-100', 'data-bar' => 'baz'}) do |f| %>
