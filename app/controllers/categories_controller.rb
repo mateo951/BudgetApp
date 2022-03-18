@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
   # GET /categories or /categories.json
   def index
     @categories = Category.all
@@ -17,8 +18,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = current_user.categories.new(category_params)
-
+    @category = Category.new(category_params)
+    @category.author_id = current_user.id
     respond_to do |format|
       if @category.save
         format.html { redirect_to category_url(@category), notice: 'Category was successfully created.' }

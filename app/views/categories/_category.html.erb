@@ -1,12 +1,15 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
-
+<div id="<%= dom_id category %>" class="category-container">
+  <div class="flex-row justify-content-between category-item">
+    <div class="flex-row">
+        <p>
+          <%= image_tag "#{category.icon}" %>
+        </p>
+      <p class="title-category">
+        <%= category.name %>
+      </p>
+    </div>
+    <p>
+      <%= '$140' %>
+    </p>
+  </div>
 </div>

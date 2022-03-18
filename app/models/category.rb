@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  belongs_to :user
-  has_and_belongs_to_many :activities
+  belongs_to :author, class_name: 'User'
+  has_many :activity_categories, foreign_key: :category_id
 
   validates :name, presence: true
   validates :icon, presence: true, length: { maximum: 350 }

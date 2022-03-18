@@ -7,6 +7,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
 
+gem 'cancancan'
+
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 

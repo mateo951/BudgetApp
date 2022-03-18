@@ -87,6 +87,14 @@ body {
   flex-direction: column;
 }
 
+.flex-row {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
 .align-items {
   align-items: center;
 }
@@ -156,4 +164,17 @@ p {
 
 .logout {
   color: white;
+}
+
+.category-container {
+  margin: 15px;
+  border: 1px solid lightgray;
+}
+
+.category-item {
+  padding: 20px;
+}
+
+.title-category {
+  margin-left: 20px;
 }

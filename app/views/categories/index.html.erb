@@ -3,8 +3,6 @@
     <p>TRANSACTIONS</p>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
 </div>
-<h1>Categories</h1>
-
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
