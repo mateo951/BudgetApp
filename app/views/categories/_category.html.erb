@@ -1,5 +1,6 @@
+<%= link_to "/categories/#{category.id}" do %>
 <div id="<%= dom_id category %>" class="category-container">
-  <div class="flex-row justify-content-between category-item">
+  <div class="flex-row justify-content-between category-item text-color">
     <div class="flex-row">
         <p>
           <%= image_tag "#{category.icon}" %>
@@ -13,3 +14,4 @@
     </p>
   </div>
 </div>
+<% end %>

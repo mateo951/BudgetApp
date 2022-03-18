@@ -169,6 +169,7 @@ p {
 .category-container {
   margin: 15px;
   border: 1px solid lightgray;
+  background-color: white;
 }
 
 .category-item {
@@ -177,4 +178,25 @@ p {
 
 .title-category {
   margin-left: 20px;
+}
+
+.text-color {
+  color: gray;
+}
+
+.add-new-pos {
+  position: absolute;
+  bottom: 0em;
+  width: 100%;
+  background-color: #73BF26;
+  padding: 10px;
+  display: flex;
+}
+
+.add-new-bttn {
+  padding: 10px;
+  border: 1px solid white;
+  text-align: center;
+  width: 100%;
+  color: white !important;
 }
