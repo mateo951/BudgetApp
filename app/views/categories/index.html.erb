@@ -5,14 +5,19 @@
 </div>
 <div class="background-color">
   <div class="add-new-pos">
-    <%= link_to "New category", new_category_path, :class => 'add-new-bttn' %>
+    <%= link_to "New Category", new_category_path, :class => 'add-new-bttn' %>
   </div>
   <div id="categories">
     <% @categories.each do |category| %>
-      <%= render category %>
-      <p>
-
-      </p>
+      <a href=<%=activity_index_path(category_id: category.id )%>>
+        <%= render category %>
+        <p>
+        </p>
+      <a/>
     <% end %>
   </div>
 <div>
+
+
+
+

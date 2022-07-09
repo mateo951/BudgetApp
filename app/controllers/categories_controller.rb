@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @recipes = Category.all.where(user: current_user)
+    @category = Category.all.where(user: current_user)
   end
 
   def new

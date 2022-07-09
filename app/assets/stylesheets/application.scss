@@ -173,6 +173,12 @@ p {
   color: #232326;
 }
 
+.index-activity {
+  text-align: center;
+  font-size: 30px;
+  color: black !important;
+}
+
 .alert {
   margin-top: 30px;
 }
@@ -222,10 +228,20 @@ p {
 
 .title-category {
   margin-left: 20px;
+  font-size: 20px;
 }
 
 .black {
   color: black;
+}
+
+.category-amount {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.gray-font {
+  color: #AEAEAE;
 }
 
 .text-color {
