@@ -17,13 +17,13 @@
  @import "bootstrap";
 
 body {
-  background-color: #F5F6F8;
+  background-color: #3778c2;
 }
 
-.splash-bg {
-  background-color: #3778c2;
-  height: 100%;
-  width: 100%;
+.flex-splash {
+  display: flex;
+  flex-direction: column;
+  gap: 170px;
 }
 
 .img-responsive {
@@ -31,6 +31,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  margin-top: 40px;
 }
 
 .main-container {
@@ -44,13 +45,11 @@ body {
   color: white;
 }
 
-.img-bottom {
-  position: absolute;
-  top: 10em;
+.main-img {
+
 }
 
 .bttns-position {
-  position: absolute;
   bottom: 10em;
   width: 100%;
   display: flex;
@@ -59,10 +58,6 @@ body {
 
 .vertical-center {
   margin: 0;
-  position: absolute;
-  top: 55%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .buttons {
