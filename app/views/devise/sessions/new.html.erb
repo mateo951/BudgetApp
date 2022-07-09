@@ -1,22 +1,21 @@
-<div class="blue-navbar">
+<%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
+  <div class="blue-navbar">
     <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
     <p>LOGIN</p>
-    <button id="login-submit" class="borderless-bttn">Log In</button>
-</div>
-<div class="center-div flex-column align-items margin-top-nav form">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'login-form', :class => 'width-100', 'data-bar' => 'baz'}) do |f| %>
-  <div class="field width-100">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    <%= f.submit "Log In", class: "borderless-bttn"  %>
+  </div>
+  
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, class: "form-input" %>
   </div>
 
   <div class="field width-100">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true, class: "form-input" %>
   </div>
 
-<% end %>
-
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-pss" %><br />
+  <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-pss" %>
+  <% end %>
 <% end %>
 
 </div>

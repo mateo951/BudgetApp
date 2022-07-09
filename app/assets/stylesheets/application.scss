@@ -121,7 +121,7 @@ p {
 }
 
 .borderless-bttn {
-  border: none;
+  border: none !important;
   background-color: #3778c2;
   color: white;
 }
@@ -134,7 +134,7 @@ p {
   width: 100%;
 }
 
-.width-100 input {
+.form-input {
   width: 100%;
   border: 1px solid lightgray;
   height: 40px;
@@ -145,8 +145,10 @@ p {
 }
 
 .forgot-pss {
-  margin-top: 30px;
-  color: gray
+  display: flex;
+  justify-content: center;
+  margin-top: 30px !important;
+  color: white;
 }
 
 .alert-danger {
@@ -159,6 +161,8 @@ p {
 
 .logout {
   color: white;
+  border: none;
+  background-color: #3778c2;
 }
 
 .category-container {
