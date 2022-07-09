@@ -19,5 +19,6 @@
   <div class="field width-100">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", required: true, class: "form-input" %>
   </div>
+  <%= link_to "Already register?", new_session_path(resource_name), class: "forgot-pss" %>
 <% end %>
 <%= render "devise/shared/error_messages", resource: resource %>

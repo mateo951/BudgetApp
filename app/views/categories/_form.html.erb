@@ -1,8 +1,17 @@
-<%= form_with(model: category, :html => {:id => 'login-form', :class => 'width-100', 'data-bar' => 'baz'}) do |form| %>
+<%= form_with scope: :category, url: categories_path, method: :post  do |form| %>
+  <div>
+    <%= form.text_field :name, :class => 'width-100', placeholder: "Name" %>
+  </div>
+
+  <div>
+    <%= form.text_field :icon, :class => 'width-100', placeholder: "Image URL" %>
+  </div>
+  <div id="submit-bttn">
+    <%= form.submit %>
+  </div>
   <% if category.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
       <ul>
         <% category.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,16 +19,4 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

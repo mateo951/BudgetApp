@@ -8,9 +8,6 @@
 
 <%= render @category %>
 
-<div class="flex-row">
-  <%= link_to "Edit", edit_category_path(@category), :class => 'btn btn-info' %>
+<div class="flex-row gap margin-left">
   <%= button_to "Destroy", @category, method: :delete, :class => 'btn btn-danger' %>
 </div>
-
-<p style="color: green"><%= notice %></p>
