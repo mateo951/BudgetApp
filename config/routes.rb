@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :activities
+  devise_for :users
+ 
+  get '/activities/index/:category_id', to: "activity#index", as: 'activity_index'
+  get '/activities/show/:activity_id/:category_id', to: "activity#show", as: 'activity_detail'
+  get '/activities/new/:category_id', to: "activity#new", as: 'activity_new'
+  post '/activities/new', to: "activity#create", as: 'activity_create'
   resources :categories
 
-  devise_for :users
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
-
-  resources :users
-  root "users#index"
+  root "splash#index"
 end

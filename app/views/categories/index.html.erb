@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+<div class="blue-navbar">
+    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <p>Categories</p>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
 </div>
+<div class="background-color">
+  <div class="add-new-pos">
+    <%= link_to "New Category", new_category_path, :class => 'add-new-bttn' %>
+  </div>
+  <div id="categories">
+    <% @categories.each do |category| %>
+      <a href=<%=activity_index_path(category_id: category.id )%>>
+        <%= render category %>
+        <p>
+        </p>
+      <a/>
+    <% end %>
+  </div>
+<div>
 
-<%= link_to "New category", new_category_path %>
+
+
+
