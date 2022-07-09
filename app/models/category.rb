@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-  has_many :activity_categories, foreign_key: :category_id
+  belongs_to :user
+  has_many :entities
 
-  validates :name, presence: true
+  validates :name, presence: { message: "Name can't be blank" }
   validates :icon, presence: true, length: { maximum: 350 }
 end

@@ -1,7 +1,9 @@
 class Activity < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-  has_and_belongs_to_many :categories
+  belongs_to :user
+  belongs_to :category
 
-  validates :name, :amount, presence: true
-  validates :amount, numericality: { greater_than: 0 }
+  validates :name, presence: { message: "Name can't be blank" }
+  validates :amount, presence: { message: "Amount can't be nothing" }
+  validates :amount, numericality: { only_float: true, greater_than: 0, message: 'Amount must be greater than 0' }
 end
+

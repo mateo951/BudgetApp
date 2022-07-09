@@ -40,8 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_18_182443) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id"
-    t.index ["author_id"], name: "index_categories_on_author_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
@@ -62,5 +60,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_18_182443) do
   add_foreign_key "activities", "users"
   add_foreign_key "activity_categories", "activities"
   add_foreign_key "categories", "users"
-  add_foreign_key "categories", "users", column: "author_id"
 end
