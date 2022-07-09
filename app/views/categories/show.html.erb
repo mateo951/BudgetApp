@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="blue-navbar">
+    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <p><%= @category.name %></p>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
+</div>
+
 
 <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class="flex-row justify-content-center">
+  <%= button_to "Destroy", @category, method: :delete, :class => 'btn btn-danger' %>
 </div>

@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
   belongs_to :user
-  has_and_belongs_to_many :activities
+  has_many :activities
 
-  validates :name, presence: true
+  validates :name, presence: { message: "Name can't be blank" }
   validates :icon, presence: true, length: { maximum: 350 }
 end

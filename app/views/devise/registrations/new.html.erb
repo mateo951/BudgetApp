@@ -1,34 +1,24 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "username" %>
+<%= form_for(resource, as: resource_name, data: { turbo: false }, url: registration_path(resource_name)) do |f| %>
+  <div class="blue-navbar">
+    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <p>REGISTER</p>
+    <%= f.submit "Next", class: "borderless-bttn"  %>
+  </div>
+  <div class="field width-100">
+    <%= f.text_field :name, autocomplete: "username", placeholder: "Name", required: true, class: "form-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field width-100">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, class: "form-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="field width-100">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", required: true, class: "form-input"%>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field width-100">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", required: true, class: "form-input" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= link_to "Already register?", new_session_path(resource_name), class: "forgot-pss" %>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/error_messages", resource: resource %>
