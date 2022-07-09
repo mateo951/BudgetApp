@@ -1,5 +1,7 @@
 <div class="blue-navbar">
-    <%= link_to image_path("arrow-left.png"), "/activities/index/#{@category.id}" , class: "arrow-back"%>
+<%= link_to root_path do %>
+  <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+<% end%>
     <p><%=@category.name%></p>
     <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
 </div>
@@ -7,7 +9,7 @@
   <div class="flex-row justify-content-between category-item text-color">
     <div class="flex-row">
         <p>
-          <%= image_path("#{@category.icon}"), class: "img-show" %>
+          <%= image_tag(image_path("#{@category.icon}"), class: "img-show") %>
         </p>
       <p class="title-category gray-font">
         <%= @activity.name %>

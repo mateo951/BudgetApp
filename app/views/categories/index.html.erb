@@ -1,5 +1,7 @@
 <div class="blue-navbar">
-    <%= link_to image_path("arrow-left.png"), root_path, class: "arrow-back"%>
+<%= link_to root_path do %>
+  <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+<% end%>
     <p>Categories</p>
     <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
 </div>
