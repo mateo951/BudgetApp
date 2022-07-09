@@ -1,13 +1,13 @@
 <%= form_with scope: :category, url: categories_path, method: :post  do |form| %>
   <div>
-    <%= form.text_field :name, :class => 'width-100', placeholder: "Name" %>
+    <%= form.text_field :name, :class => 'width-100', placeholder: "Name", required: true %>
   </div>
 
   <div>
-    <%= form.text_field :icon, :class => 'width-100', placeholder: "Image URL" %>
+    <%= form.text_field :icon, :class => 'width-100', placeholder: "Image URL", required: true %>
   </div>
-  <div id="submit-bttn">
-    <%= form.submit %>
+  <div class="add-new-pos">
+    <%= form.submit 'Save', :class => 'add-new-bttn' %>
   </div>
   <% if category.errors.any? %>
     <div style="color: red">

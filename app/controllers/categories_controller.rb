@@ -11,33 +11,25 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    @category.author_id = current_user.id
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to category_url(@category), notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    @category.user = current_user
+    if @category.valid?
+      @category.save
+      flash[:notice] = "Category added"
+    else
+      flash[:alert] = "#{@category.name} could't be created"
     end
+    redirect_to categories_url
   end
 
   def destroy
     @category.destroy
-
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:alert] = "#{@category.name} was successfully deleted"
+    redirect_to categories_url
   end
 
   private
-  def set_category
-    @category = Category.find(params[:id])
-  end
 
   def category_params
-    params.require(:category).permit(:name, :icon)
+    params.require(:category).permit(:user, :name, :icon)
   end
 end
