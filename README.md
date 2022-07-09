@@ -12,7 +12,7 @@ Built With
 - PostgreSQL
 - Rubocop
 
-[Live Demo: Netlify](https://react-castpone-mv.netlify.app)
+[Live Demo: Heroku](https://budgetappmv.herokuapp.com)
 
 ![ScreenShot](./app/assets/images/screen-shot-1.PNG?raw=true)
 ![ScreenShot](./app/assets/images/screen-shot-2.PNG?raw=true)
