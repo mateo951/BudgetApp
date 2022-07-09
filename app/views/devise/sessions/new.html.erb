@@ -1,6 +1,8 @@
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
   <div class="blue-navbar">
-    <%= link_to image_tag("/assets/arrow-left.png"), root_path, class: "arrow-back"%>
+    <%= link_to root_path do %>
+      <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+    <% end%>
     <p>LOGIN</p>
     <%= f.submit "Log In", class: "borderless-bttn"  %>
   </div>
