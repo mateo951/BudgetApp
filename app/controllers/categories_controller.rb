@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     @category.user = current_user
     if @category.valid?
       @category.save
-      flash[:notice] = "Category added"
+      flash[:notice] = 'Category added'
     else
       flash[:alert] = "#{@category.name} could't be created"
     end

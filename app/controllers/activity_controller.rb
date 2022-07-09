@@ -20,7 +20,7 @@ class ActivityController < ApplicationController
     transaction.user = current_user
     if transaction.valid?
       transaction.save
-      flash[:notice] = "New transaction created successfully"
+      flash[:notice] = 'New transaction created successfully'
     else
       flash[:alert] = "Transaction could't be created"
     end
