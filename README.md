@@ -40,9 +40,6 @@ Built With
 - Run `rails s` to start the server.
   
 ### Run tests
-
-- Unit Tests:
-  - `npm run test` or `npm test`
 - Linters Tests:
   - Eslint: run `npx eslint .`
   - Stylelint: run `npx stylelint "**/*.{css,scss}"`
