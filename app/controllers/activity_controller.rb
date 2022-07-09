@@ -25,7 +25,7 @@ class ActivityController < ApplicationController
       flash[:alert] = "Transaction could't be created"
     end
     redirect_to categories_url
-  end 
+  end
 
   def activity_params
     params.require(:activity).permit(:name, :amount)

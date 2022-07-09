@@ -2,7 +2,7 @@ class SplashController < ApplicationController
   before_action :check_signed_in
   before_action :authenticate_user!, except: [:index]
 
-  def index 
+  def index
     render :layout => false
   end
 
