@@ -8,7 +8,7 @@ module Mocks
     ]
     (0..1).each do |i|
       user = User.new(names[i])
-      user.password = "123456"
+      user.password = '123456'
       user.save!
     end
     User.all
