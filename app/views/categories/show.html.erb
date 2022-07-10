@@ -1,0 +1,14 @@
+<div class="blue-navbar">
+<%= link_to root_path do %>
+  <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+<% end%>
+    <p><%= @category.name %></p>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
+</div>
+
+
+<%= render @category %>
+
+<div class="flex-row justify-content-center">
+  <%= button_to "Destroy", @category, method: :delete, :class => 'btn btn-danger' %>
+</div>

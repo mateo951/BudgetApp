@@ -1,0 +1,23 @@
+<div class="blue-navbar">
+<%= link_to root_path do %>
+  <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+<% end%>
+    <p><%=@category.name%></p>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
+</div>
+<div id="<%= dom_id @category %>" class="category-container">
+  <div class="flex-row justify-content-between category-item text-color">
+    <div class="flex-row">
+        <p>
+          <%= image_tag(image_path("#{@category.icon}"), class: "img-show") %>
+        </p>
+      <p class="title-category gray-font">
+        <%= @activity.name %>
+      </p>
+    </div>
+    <p class="black category-amount">
+      <%= number_to_currency @activity.amount %>
+    </p>
+  </div>
+</div>
+<div>

@@ -1,0 +1,24 @@
+<%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
+  <div class="blue-navbar">
+    <%= link_to root_path do %>
+      <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+    <% end%>
+    <p>LOGIN</p>
+    <%= f.submit "Log In", class: "borderless-bttn"  %>
+  </div>
+  
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, class: "form-input" %>
+  </div>
+
+  <div class="field width-100">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true, class: "form-input" %>
+  </div>
+
+  <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-pss" %>
+  <% end %>
+<% end %>
+
+</div>
+

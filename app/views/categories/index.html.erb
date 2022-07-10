@@ -1,0 +1,25 @@
+<div class="blue-navbar">
+<%= link_to root_path do %>
+  <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+<% end%>
+    <p>Categories</p>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
+</div>
+<div class="background-color">
+  <div class="add-new-pos">
+    <%= link_to "New Category", new_category_path, :class => 'add-new-bttn' %>
+  </div>
+  <div id="categories">
+    <% @categories.each do |category| %>
+      <a href=<%=activity_index_path(category_id: category.id )%>>
+        <%= render category %>
+        <p>
+        </p>
+      <a/>
+    <% end %>
+  </div>
+<div>
+
+
+
+

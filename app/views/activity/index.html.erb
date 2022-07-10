@@ -1,0 +1,38 @@
+<div class="blue-navbar">
+    <%= link_to root_path do %>
+      <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+    <% end%>
+    <p><%=@category.name%></p>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
+</div>
+<div class="flex align-center flex-3 justify-between padding-20">
+  <% if @activities.count > 0  %>
+    <p class="bold text text-color index-activity"><%=number_to_currency @category.activities.where(user: current_user).sum(:amount)%> </p>
+  <% end %>
+</div>
+
+<div class="">
+  <% @activities.each do |activity|%>
+    <a href=<%=activity_detail_path(activity_id: activity.id, category_id: @category.id )%> class="text">
+    <div id="<%= dom_id @category %>" class="category-container">
+      <div class="flex-row justify-content-between category-item text-color">
+        <div class="flex-row">
+          <p>
+            <%= image_tag(image_path("#{@category.icon}"), class: "img-show") %>
+          </p>
+          <p class="title-category gray-font">
+            <%= activity.name %>
+          </p>
+        </div>
+        <p class="black category-amount">
+          <%= number_to_currency activity.amount %>
+        </p>
+      </div>
+    </div>
+    </a>
+  <%end%>
+</div>
+<div class="add-new-pos">
+  <%= link_to 'New Transaction', activity_new_path(category_id: @category.id), method: :get, :class => 'add-new-bttn' %>
+</div>
+

@@ -1,0 +1,22 @@
+<%= form_with scope: :category, url: categories_path, method: :post  do |form| %>
+  <div>
+    <%= form.text_field :name, :class => 'width-100', placeholder: "Name", required: true %>
+  </div>
+
+  <div>
+    <%= form.text_field :icon, :class => 'width-100', placeholder: "Image URL", required: true %>
+  </div>
+  <div class="add-new-pos">
+    <%= form.submit 'Save', :class => 'add-new-bttn' %>
+  </div>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

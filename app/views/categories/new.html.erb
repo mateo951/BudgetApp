@@ -1,0 +1,10 @@
+<div class="blue-navbar">
+  <%= link_to root_path do %>
+    <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+  <% end%>
+  <p>New Category</p>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
+</div>
+<%= render "form", category: @category %>
+
+<br>

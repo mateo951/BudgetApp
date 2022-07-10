@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, data: { turbo: false }, url: registration_path(resource_name)) do |f| %>
+  <div class="blue-navbar">
+  <%= link_to root_path do %>
+    <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+  <% end%>
+    <p>REGISTER</p>
+    <%= f.submit "Next", class: "borderless-bttn"  %>
+  </div>
+  <div class="field width-100">
+    <%= f.text_field :name, autocomplete: "username", placeholder: "Name", required: true, class: "form-input" %>
+  </div>
+
+  <div class="field width-100">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, class: "form-input" %>
+  </div>
+
+  <div class="field width-100">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", required: true, class: "form-input"%>
+  </div>
+
+  <div class="field width-100">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", required: true, class: "form-input" %>
+  </div>
+  <%= link_to "Already register?", new_session_path(resource_name), class: "forgot-pss" %>
+<% end %>
+<%= render "devise/shared/error_messages", resource: resource %>

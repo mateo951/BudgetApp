@@ -1,0 +1,14 @@
+<div class="blue-navbar">
+  <%= link_to root_path do %>
+    <%= image_tag(image_path('arrow-left.png'), class: "arrow-back")%>
+  <% end%>
+  <p><%=@category.name%></p>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "logout", data: { turbo: false } %>
+</div>
+<%= form_with model: @activity, method:'post', class:'form', url: activity_create_path(category_id: @category.id) do |form| %>
+  <div class="field">
+    <%= form.text_field :name, autofocus: true, placeholder: "Name", required: true, class: "width-100" %>
+    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", required: true, class: "width-100" %>
+  </div>
+  <%= render partial:'form', locals: {title: "Add Transaction", form: form, button: "Create", back: activity_index_path(category_id: @category.id)}  %>
+<% end %>
