@@ -14,7 +14,7 @@ RSpec.describe Category, type: :model do
       expect(@category).to be_valid
     end
     it 'A category was created and stored' do
-      expect(@category.name).to be == "Fast Foods"
+      expect(@category.name).to be == 'Fast Foods'
     end
   end
 end
